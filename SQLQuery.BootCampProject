@@ -1,0 +1,45 @@
+Create DATABASE StudentBootCampDB;
+
+USE StudentBootCampDB;
+ CREATE TABLE Questions (
+    Id INT PRIMARY KEY,
+    QuestionTitle NVARCHAR(100),
+    Answer NVARCHAR(200)
+);
+
+INSERT INTO Questions (Id, QuestionTitle, Answer)
+VALUES
+    (1, 'What is the difference between Java and JavaScript?', 'Java is a statically typed programming language used for building applications, while JavaScript is a scripting language primarily used for web development.'),
+    (2, 'What is the main advantage of using C# over Java?', 'C# provides better integration with Windows platform and libraries, and it has more advanced features like LINQ.'),
+    (3, 'What is TypeScript and how is it related to Angular?', 'TypeScript is a superset of JavaScript that adds static typing and other features. Angular is a JavaScript framework that is built with TypeScript.'),
+    (4, 'What is the purpose of the "ngOnInit" method in Angular?', 'The "ngOnInit" method is a lifecycle hook in Angular that is called after the component is initialized. It is used to perform any initialization logic.'),
+    (5, 'What is a closure in JavaScript?', 'A closure is a function that has access to variables from its outer function, even after the outer function has finished executing.'),
+    (6, 'What is the difference between "let", "const", and "var" in JavaScript?', '"let" and "const" are block-scoped variables introduced in ECMAScript 6, while "var" is function-scoped. "let" allows reassigning values, while "const" is for variables that should not be reassigned.'),
+    (7, 'What is the purpose of the "async" and "await" keywords in C#?', '"async" and "await" are used for asynchronous programming in C#. They allow you to write asynchronous code that looks like synchronous code, making it easier to work with asynchronous operations.'),
+    (8, 'What is the difference between class-based components and functional components in React?', 'Class-based components are defined using ES6 classes and have additional features like lifecycle methods. Functional components are simpler and are defined as JavaScript functions.'),
+    (9, 'What is the use of the "interface" keyword in TypeScript?', 'The "interface" keyword is used to define a contract for an object in TypeScript. It specifies the properties and methods that an object must have.'),
+    (10, 'What is the purpose of the "this" keyword in JavaScript?', 'The "this" keyword refers to the object that is currently executing the code. Its value depends on how a function is called.'),
+    (11, 'What is the difference between an array and an ArrayList in Java?', 'An array is a fixed-size data structure, while an ArrayList is a dynamic-size data structure provided by the Java Collections Framework.'),
+    (12, 'What is the purpose of the "ngFor" directive in Angular?', 'The "ngFor" directive is used to iterate over a collection of items in Angular templates. It generates HTML elements for each item in the collection.'),
+    (13, 'What is the difference between "==" and "===" in JavaScript?', '"==" performs type coercion, while "===" performs strict equality comparison. "===" requires both the value and type to be equal.'),
+    (14, 'What is the purpose of the "StringBuilder" class in C#?', 'The "StringBuilder" class is used for efficient string concatenation in C#. It provides better performance when dealing with a large number of string concatenations.')*/
+
+	---Create separate table for Favorites
+
+	CREATE TABLE Favorites (
+    Id INT PRIMARY KEY,
+    UserId INT,
+    QuestionId INT
+);
+
+INSERT INTO Favorites (Id, UserId, QuestionId)
+VALUES
+    (1, 1, 2),
+    (2, 1, 5),
+    (3, 2, 3),
+    (4, 2, 7),
+    (5, 3, 1);
+
+	---To validate that your tables are built successfully
+	SELECT * FROM Favorites;
+	SELECT * FROM Questions;
